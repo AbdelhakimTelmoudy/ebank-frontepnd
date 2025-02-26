@@ -1,1 +1,112 @@
-<p>layout works!</p>
+
+<nz-layout>
+    <nz-sider nzCollapsible style="height: 100vh" [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+      <div class="logo">
+        @if (isCollapsed) {
+          <img src="" alt="logo-assafa" height="50">
+        }@else {
+          <img src="" alt="logo-assafa" height="100">
+        }
+      </div>
+  
+      <div class="user-info">
+         <ng-container *ngIf="initialsTemplate">
+          <nz-avatar [nzSize]="40" nzText="currentUser?.picture"></nz-avatar>
+        </ng-container>
+        <!--
+        @if (!isCollapsed) {
+          <div>
+            <h5>SE</h5>
+            <span style="color: #9C9C9C; font-size: 12px;">Casablanca, MAROC</span>
+            <span style="color: #9C9C9C; font-size: 12px;">Saad.essalami1999</span>
+          </div>
+        } -->
+      </div>
+      <ng-template #initialsTemplate>
+        <nz-avatar [nzSize]="40" [nzText]=""></nz-avatar>
+      </ng-template>
+      <hr>
+  
+      <ul nz-menu nzTheme="dark" nzMode="inline">
+  
+        <ng-container
+        *ngFor="let item of navigationItems "
+        [ngTemplateOutlet]="item.subMenuItems ? subNav : nav"
+        [ngTemplateOutletContext]="{ item: item }">
+      </ng-container>
+        <ng-template #nav let-item="item">
+          <li nz-menu-item nz-tooltip
+          nzTooltipPlacement="right"
+          [nzTooltipTitle]="isCollapsed ? item.title : ''"
+          routerLink="/{{item.routerLink}}" [class.ant-menu-item-selected]="item.routerLink === currentRoute" >
+  
+            <span nz-icon>
+              <img  alt="icon" height="20"
+              src="assets/icons/{{
+                item.routerLink === currentRoute ? item.iconActive : item.icon
+              }}"
+              >
+            </span>
+  
+            <span class="navItem">{{item.title}}</span>
+          </li>
+        </ng-template>
+  
+        <ng-template #subNav let-item="item">
+          <li nz-submenu class="hamid" [nzTitle]="itemTemplate"
+          [nzOpen]="item.routerLink === currentRoute">
+  
+          <ng-template #itemTemplate>
+            <span nz-icon>
+              @if (item.routerLink === currentRoute) {
+                <img [src]="'assets/icons/' + item.iconActive" alt="icon" height="20">
+              }@else {
+                <img [src]="'assets/icons/' + item.icon" alt="icon" height="20">
+              }
+            </span>
+            <span class="navItem">{{item.title}}</span>
+          </ng-template>
+  
+            <ul>
+              @for (subMenuItem of item.subMenuItems; track $index) {
+                <li nz-menu-item [routerLink]="[item.routerLink +'/'+ subMenuItem.routerLink]" [class.ant-menu-item-selected]="subMenuItem.routerLink === SubCurrentRoute">{{subMenuItem.name}}</li>
+              }
+            </ul>
+          </li>
+  
+        </ng-template>
+  
+       
+      </ul>
+    </nz-sider>
+  
+    <nz-layout style="height: 100vh">
+      <nz-header style=" display: flex; align-items: center; position: relative; height: 60px">
+        <span
+          class="trigger"
+          nz-icon
+          [nzType]="isCollapsed ? 'right' : 'left'"
+          (click)="isCollapsed = !isCollapsed"
+        ></span>
+        <div class="header-ban">
+          <!-- <nz-breadcrumb>
+            <nz-breadcrumb-item *ngFor="let breadcrumb of breadcrumbs">
+              <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
+            </nz-breadcrumb-item>
+          </nz-breadcrumb> -->
+          <div class="logout">
+            <!-- <button class="logout-button" (click)="logout()"><img src="assets/icons/logout.svg" alt="logout"> Déconnexion</button> -->
+          </div>
+        </div>
+       
+      </nz-header>
+      <nz-content style="height: calc(100vh - 110px);overflow: auto;scrollbar-width: none;">
+        <div class="inner-content">
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
+    </nz-layout>
+  </nz-layout>
+  
+  
+  

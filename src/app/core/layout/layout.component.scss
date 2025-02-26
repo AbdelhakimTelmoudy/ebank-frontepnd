@@ -1,0 +1,231 @@
+
+* {
+    font-family: 'Montserrat-Bold', sans-serif;
+  }
+  
+  nz-header {
+    background: #fff;
+    padding: 0;
+  }
+  
+  .logo {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  nz-content {
+    padding: 30px;
+  }
+  
+  .trigger {
+    font-size: 12px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+    color: #fff;
+  }
+  .subHeader{
+    height: 50px
+  }
+  .inner-content {
+    background: #fff;
+    min-height: 100%;
+    border-radius: 15px;
+  }
+  
+  nz-footer {
+    text-align: center;
+  }
+  nz-layout .ant-layout {
+    min-height: 100vh;
+  }
+  
+  span.anticon.trigger.anticon-left{
+    cursor: pointer;
+    position: relative;
+    right: 15px;
+    background: #028E76;
+    padding: 5px;
+    border-radius: 50%;
+  }
+  
+  span.anticon.trigger.anticon-right{
+    cursor: pointer;
+    position: relative;
+    right: 10px;
+    background: #028E76;
+    padding: 5px;
+    border-radius: 50%;
+  }
+  .user-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  
+  ::ng-deep .ant-layout-sider-children{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background: #FFFFFF !important;
+    // height: calc(100vh - 40px);
+    // overflow-y: auto;
+  }
+  ::ng-deep .ant-layout-sider-children .ant-menu.ant-menu-inline-collapsed{
+    width: 100%;
+  }
+  
+  ::ng-deep span.ant-menu-title-content{
+    display: flex;
+  }
+  
+  ::ng-deep nz-sider.ant-layout-sider.ant-layout-sider-dark{
+      flex: 0 0 230px !important;
+      max-width: 230px !important;
+      min-width: 230px  !important;
+      width: 230px !important;
+      background: #fff !important;
+  }
+  
+  ::ng-deep nz-sider.ant-layout-sider.ant-layout-sider-dark.ant-layout-sider-collapsed{
+    flex: 0 0 80px !important;
+    max-width: 80px !important;
+    min-width: 80px !important;
+    width: 80px !important;
+    overflow: hidden;
+  }
+  
+  ul.ant-menu.ant-menu-root.ant-menu-dark.ant-menu-inline{
+    background: #fff;
+    height: calc(100vh - 260px);
+    overflow-y: auto;
+    // scrollbar-color: #028E76 transparent;
+    scrollbar-color: none;
+    // scrollbar-width: thin;
+    scrollbar-width: none;
+  }
+  
+  ul.ant-menu.ant-menu-root.ant-menu-dark.ant-menu-vertical.ant-menu-inline-collapsed{
+    background: #fff;
+  }
+  
+  .navItem{
+    color:#9AA8BD;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  ::ng-deep.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected{
+    background: #028E761A;
+    font-size: 14px;
+    font-weight: 700;
+    border-right: 3px solid #028E76;
+  }
+  
+  ::ng-deep.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected .navItem{
+    color: #028E76 !important;
+  }
+  
+  ::ng-deep span.ant-breadcrumb-link a{
+    font-size: 14px;
+    font-weight: 700;
+    color: #028E76 ;
+  }
+  ::ng-deep.ant-breadcrumb > nz-breadcrumb-item:last-child a{
+    font-size: 14px;
+    font-weight: 700;
+    color: #028E76 ;
+  }
+  ::ng-deep.ant-breadcrumb a:hover {
+    color: #3bae9b;
+  }
+  // ::ng-deep.ant-breadcrumb > nz-breadcrumb-item a{
+  //   font-size: 14px;
+  //   font-weight: 700;
+  //   color: gray ;
+  // }
+  ::ng-deep.ant-menu-dark .ant-menu-inline.ant-menu-sub{
+    background-color: #FFFFFF;
+    color: #9AA8BD;
+  }
+  
+  
+  ::ng-deep span.ant-menu-title-content{
+    color: #9AA8BD;
+  }
+  
+  ::ng-deep li.ant-menu-item.ant-menu-item-selected span.ant-menu-title-content{
+    color: #028E76;
+  }
+  
+  ::ng-deep .ant-menu-dark .ant-menu-submenu-open{
+    background: rgba(2, 142, 118, 0.1019607843);
+  }
+  ::ng-deep li.hamid.ant-menu-submenu.ant-menu-submenu-open{
+    background: transparent;
+  }
+  ::ng-deep .ant-menu-dark .ant-menu-submenu-open .navItem{
+    color: #028E76 ;
+  }
+  
+  ::ng-deep .ant-menu-dark .ant-menu-sub{
+    background: #000000;
+  }
+  ::ng-deep .ant-menu-dark .ant-menu-item:hover{
+    background: rgba(53, 69, 66, 0.102);
+  }
+  ::ng-deep .ant-menu-dark .ant-menu-submenu-open > .ant-menu-submenu-title > .ant-menu-submenu-arrow::before{
+    background: #028E76;
+  }
+  ::ng-deep .ant-menu-dark .ant-menu-submenu-open > .ant-menu-submenu-title > .ant-menu-submenu-arrow::after{
+    background: #028E76;
+  }
+  ::ng-deep .ant-menu.ant-menu-dark .ant-menu-submenu-title .ant-menu-submenu-arrow::before{
+    background: #9AA8BD;
+  }
+  ::ng-deep .ant-menu.ant-menu-dark .ant-menu-submenu-title .ant-menu-submenu-arrow::after{
+    background: #9AA8BD;
+  }
+  
+  ::ng-deep .ant-menu-submenu-open .ant-menu-submenu-title{
+    border-right: 3px solid #028E76;
+    height: 40px;
+  }
+  
+  ::ng-deep.ant-menu-inline .ant-menu-submenu-title{
+    margin-bottom: 0px;
+  }
+  .header-ban{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 96.4%;
+    justify-content: space-between;
+  }
+  .logout-button{
+    border: none;
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #9AA8BD;
+      font-family: 'Montserrat-Bold', sans-serif;
+      font-size: 14px;
+  }
+  :host ::ng-deep nz-avatar.ant-avatar.ant-avatar-circle {
+    position: relative;
+  }
+  :host ::ng-deep span.ant-avatar-string {
+    position: absolute;
+    top: 0%;
+    left: 25%;
+  }
+  
+  
