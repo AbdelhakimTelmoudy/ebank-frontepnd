@@ -10,6 +10,8 @@ import { UserService } from '../../modules/auth/services/user.service';
 import { CommonModule } from '@angular/common';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { sideNavigation } from '../utils/helpers/navigation.config';
+import { BreadcrumbService } from '../utils/services/breadcrumb.service';
 
 @Component({
   selector: 'app-layout',
@@ -23,13 +25,13 @@ export class LayoutComponent implements OnInit ,OnDestroy {
   isCollapsed: boolean = false;
   isDropDownCollapsed: boolean=false;
   private onDestroy$ = new Subject();
-  navigationItems: any[] = [];
+  navigationItems: any[] = sideNavigation;
   breadcrumbs: any[] = [];
   // currentUser: IUserInfo | null = null;
   ngOnInit(): void {
-    // this.breadcrumbService.getBreadcrumbs().subscribe(breadcrumbs => {
-    //   this.breadcrumbs = breadcrumbs;
-    // });
+    this.breadcrumbService.getBreadcrumbs().subscribe(breadcrumbs => {
+      this.breadcrumbs = breadcrumbs;
+    });
 
     // this.userService.currentUser$.subscribe(user => {
     //   // console.log('User received in LayoutComponent:', user);
@@ -44,7 +46,7 @@ export class LayoutComponent implements OnInit ,OnDestroy {
   constructor(
     private readonly router: Router,
     private readonly cd: ChangeDetectorRef,
-    // private breadcrumbService: BreadcrumbService,
+    private breadcrumbService: BreadcrumbService,
     private authService: AuthService,
     private userService: UserService
   ) {
