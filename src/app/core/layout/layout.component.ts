@@ -10,8 +10,8 @@ import { UserService } from '../../modules/auth/services/user.service';
 import { CommonModule } from '@angular/common';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
-import { sideNavigation } from '../utils/helpers/navigation.config';
 import { BreadcrumbService } from '../utils/services/breadcrumb.service';
+import { sideNavigation } from '../utils/helpers/navigation.config';
 
 @Component({
   selector: 'app-layout',

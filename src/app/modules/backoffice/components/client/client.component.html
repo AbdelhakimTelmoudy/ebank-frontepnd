@@ -1,1 +1,34 @@
-<p>client works!</p>
+<div class="parent">
+    <div class="buttons-search">
+        <button class="ajouter"> Ajouter un client </button>
+    </div>
+    <div class="table">
+        <nz-table #basicTable [nzData]="clientsData">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>email</th>
+                <th>Phone</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of basicTable.data let odd = odd; let index = index" [ngClass]="{ 'odd-table': odd }">
+                  <td>{{ data.nom }}</td>
+                  <td>{{ data.email }}</td>
+                  <td>{{ data.telephone }}</td>
+                  <td>
+                    <div class="action">
+                        <span class="view" style="cursor: pointer; font-size: 15px;">
+                            <nz-icon nzType="eye" nzTheme="outline" />
+                        </span>
+                        <span class="delete" style="cursor: pointer; font-size: 15px;">
+                            <nz-icon nzType="delete" nzTheme="outline" style="color: red;"/>
+                        </span>
+                    </div>
+                  </td>
+                </tr>
+            </tbody>
+          </nz-table>
+    </div>
+</div>

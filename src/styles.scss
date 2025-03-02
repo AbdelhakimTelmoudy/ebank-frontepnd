@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+.odd-table {
+    background-color: #F7F9FC;
+}
+button.ajouter {
+    font-weight: 700;
+    padding: .7rem;
+    border-radius: 10px;
+    border: none;
+    background: #028E76;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
